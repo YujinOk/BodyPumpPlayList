@@ -1,6 +1,14 @@
 import pino from 'pino';
 import { Record, String, Static } from 'runtypes';
 
+import {
+  createPlayList,
+  getFavoriteList,
+  getPlayList,
+  getRandomList,
+  updatePlayList,
+} from './src/dataSource';
+
 export type Success<T> = {
   success: true;
   value: T;
@@ -43,3 +51,9 @@ const BodyPump = Record({
 //
 // export type FirestoreParams = Static<typeof FirestoreParams>;
 export type BodyPump = Static<typeof BodyPump>;
+
+export interface DataSource {
+  createPlayList: ReturnType<typeof createPlayList>;
+  getFavoriteList: ReturnType<typeof getFavoriteList>;
+  getPlayList: ReturnType<typeof getPlayList>;
+}
