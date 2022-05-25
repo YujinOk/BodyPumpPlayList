@@ -1,15 +1,3 @@
-import {
-  createPlayList,
-  getFavoriteList,
-  getPlayList,
-  getRandomList,
-  updatePlayList,
-} from '../dataSource/bodypump';
+import { createPlayList, updatePlayList } from './bodypump/playlist';
 
-export {
-  createPlayList,
-  getFavoriteList,
-  getPlayList,
-  getRandomList,
-  updatePlayList,
-};
+export { createPlayList, updatePlayList };

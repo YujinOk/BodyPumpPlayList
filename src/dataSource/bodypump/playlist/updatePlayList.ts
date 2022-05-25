@@ -1,5 +1,5 @@
 import { collection, update } from 'typesaurus';
-import { BodyPump } from '../../../types';
+import { BodyPump } from '../../../../types';
 
 const updatePlayList = () => async (id: string, pump: Partial<BodyPump>) => {
   const pumpListEntries = collection<BodyPump>('bodypump-playlist');

@@ -3,11 +3,11 @@ import { Record, String, Static } from 'runtypes';
 
 import {
   createPlayList,
-  getFavoriteList,
-  getPlayList,
-  getRandomList,
+  // getFavoriteList,
+  // getPlayList,
+  // getRandomList,
   updatePlayList,
-} from './src/dataSource';
+} from './dataSource';
 
 export type Success<T> = {
   success: true;
@@ -33,9 +33,10 @@ export interface Config {
   logLevel: LogLevel;
   environment: Environment;
   version: string;
+  projectId: string;
 }
 
-const BodyPump = Record({
+export const BodyPump = Record({
   name: String,
   1: String,
   2: String,
@@ -54,6 +55,7 @@ export type BodyPump = Static<typeof BodyPump>;
 
 export interface DataSource {
   createPlayList: ReturnType<typeof createPlayList>;
-  getFavoriteList: ReturnType<typeof getFavoriteList>;
-  getPlayList: ReturnType<typeof getPlayList>;
+  // getFavoriteList: ReturnType<typeof getFavoriteList>;
+  // getPlayList: ReturnType<typeof getPlayList>;
+  updatePlayList: ReturnType<typeof updatePlayList>;
 }

@@ -1,20 +1,21 @@
 import admin from 'firebase-admin';
 
-import { Config, DataSource } from '../../types';
-import createPlayList from '../dataSource/bodypump/createPlayList';
-import getFavoriteList from '../dataSource/bodypump/getFavoriteList';
-import getPlayList from '../dataSource/bodypump/getPlayList';
-import getRandomList from '../dataSource/bodypump/getRandomList';
-import updatePlayList from '../dataSource/bodypump/updatePlayList';
+import { Config, DataSource } from '../types';
+import createPlayList from './bodypump/playlist/createPlayList';
+// import getFavoriteList from './bodypump/favorite/getFavoriteList';
+// import getPlayList from './bodypump/playlist/getPlayList';
+// import getRandomList from './bodypump/random/getRandomList';
+import updatePlayList from './bodypump/playlist/updatePlayList';
 
 const createDataSource = (config: Config): DataSource => {
   admin.initializeApp({ projectId: config.projectId });
 
   return {
     createPlayList: createPlayList(),
-    getFavoriteList: getFavoriteList(),
-    getPlayList: getPlayList(),
-    getRandomList: getRandomList(),
+
+    // getFavoriteList: getFavoriteList(),
+    // getPlayList: getPlayList(),
+    // getRandomList: getRandomList(),
     updatePlayList: updatePlayList(),
   };
 };

@@ -24,6 +24,8 @@ const config: Config = {
   port: process.env.PORT || 9006,
   logLevel: 'info',
   projectId: PROJECT_ID || 'bodypumplist',
+  environment: 'dev',
+  version: '',
 };
 
 export default config;
